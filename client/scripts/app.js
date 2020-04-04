@@ -36,6 +36,8 @@ var App = {
       Messages.iterateMessages(data);
 
       callback();
+      setInterval(callback(), 6000);
+
       return data;
     });
   },

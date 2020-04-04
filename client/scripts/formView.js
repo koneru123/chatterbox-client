@@ -2,14 +2,18 @@ var FormView = {
 
   $form: $('form'),
 
-  initialize: function() {
+  initialize: function(data) {
+    //console.log('form view', data);
     FormView.$form.on('submit', FormView.handleSubmit);
   },
 
   handleSubmit: function(event) {
     // Stop the browser from submitting the form
+
+    //console.log('priya', data);
+
     event.preventDefault();
-    
+
     console.log('click!');
   },
 
