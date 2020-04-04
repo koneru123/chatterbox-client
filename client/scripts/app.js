@@ -30,20 +30,12 @@ var App = {
     Parse.readAll((data) => {
       // examine the response from the server request:
 
-      console.log('app.js', data);
-      //console.log(data.results[0].username);
-      //console.log(data.results[0].text);
-      //console.log(data.results[0].createdAt);
+      //console.log('app.js', data);
       Messages.iterateMessages(data);
       //formView.initialize(data);
 
       callback();
-      setInterval(callback(), 6000);
-      //var refresh = callback.bind(App);
-      //setInterval(callback(), 3000);
-      /* setInterval(function() {
-        App.fetch();
-      }, 5000); */
+      setInterval(App.fetch(), 6000);
 
       return data;
     });
@@ -56,7 +48,6 @@ var App = {
 
   // stopspinner method invokes JQuery fadeout method, which hides the matched elements by fading them to transparent.
   // The strings 'fast' and 'slow' can be supplied to indicate durations of 200 and 600 milliseconds, respectively.
-  //
   stopSpinner: function() {
     App.$spinner.fadeOut('fast');
     FormView.setStatus(false);

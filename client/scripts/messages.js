@@ -14,7 +14,7 @@ var Messages = {
         return;
       }
       html += MessageView.render(data.results[i]);
-      $('#chats').append(html);
+      $('#chats').prepend(html);
     }
   }
 };

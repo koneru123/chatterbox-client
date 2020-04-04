@@ -19,7 +19,7 @@ var FormView = {
 
     Parse.create(inputMessage);
     //App.fetch();
-    Messages.iterateSingleMessage(inputMessage);
+    //Messages.iterateSingleMessage(inputMessage);
 
     event.preventDefault();
 
