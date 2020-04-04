@@ -88,3 +88,8 @@ form input[type=text] {
     background-color: #0090da;
 }
 
+.individualMessages.username {
+    font-size: bold;
+    margin-bottom: 10px;
+}
+

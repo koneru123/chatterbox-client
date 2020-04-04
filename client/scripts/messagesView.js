@@ -2,10 +2,16 @@ var MessagesView = {
 
   $chats: $('#chats'),
 
-  initialize: function() {
+  initialize: function(data) {
+    console.log('data: ', data);
   },
 
-  render: function() {
+  render: function(data) {
+    var html = '';
+    for (var i = 0; i < data.results.length; i++) {
+      html += MessageView.render(data.results[i]);
+    }
+    $('#chat').append(html);
   }
 
 };
