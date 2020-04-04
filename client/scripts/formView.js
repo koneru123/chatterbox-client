@@ -3,14 +3,23 @@ var FormView = {
   $form: $('form'),
 
   initialize: function(data) {
-    //console.log('form view', data);
+
+    //console.log('priya', data);
     FormView.$form.on('submit', FormView.handleSubmit);
   },
 
   handleSubmit: function(event) {
+    debugger;
     // Stop the browser from submitting the form
+    var inputMessage = {
+      'text' : $('#message').val(),
+      'username': App.username,
+      'roomname': 'mainroom'
+    };
 
-    //console.log('priya', data);
+    Parse.create(inputMessage);
+    //App.fetch();
+    Messages.iterateSingleMessage(inputMessage);
 
     event.preventDefault();
 

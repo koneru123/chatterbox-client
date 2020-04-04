@@ -12,7 +12,8 @@ var Parse = {
       contentType: 'application/json',
       success: function (data) {
         console.log('chatterbox: Message sent');
-        Parse.readAll(data);
+        //App.initialize(data);
+        //Parse.readAll(data);
       },
       error: function (data) {
         // See: https://developer.mozilla.org/en-US/docs/Web/API/console.error

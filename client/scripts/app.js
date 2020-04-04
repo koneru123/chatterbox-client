@@ -8,7 +8,7 @@ var App = {
     App.username = window.location.search.substr(10);
 
     // this call initialize method is formView which handles form submittion
-    FormView.initialize();
+    FormView.initialize(App.fetch());
 
     // currently it is an empty function
     RoomsView.initialize();
@@ -22,6 +22,7 @@ var App = {
     // invokes fetch method
     // to the fetch method it is passing stopspinner method as callback
     App.fetch(App.stopSpinner);
+    //setInterval(App.fetch(), 3000);
 
   },
 
@@ -30,13 +31,19 @@ var App = {
       // examine the response from the server request:
 
       console.log('app.js', data);
-      console.log(data.results[0].username);
-      console.log(data.results[0].text);
-      console.log(data.results[0].createdAt);
+      //console.log(data.results[0].username);
+      //console.log(data.results[0].text);
+      //console.log(data.results[0].createdAt);
       Messages.iterateMessages(data);
+      //formView.initialize(data);
 
       callback();
       setInterval(callback(), 6000);
+      //var refresh = callback.bind(App);
+      //setInterval(callback(), 3000);
+      /* setInterval(function() {
+        App.fetch();
+      }, 5000); */
 
       return data;
     });
