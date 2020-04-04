@@ -2,9 +2,9 @@ var MessageView = {
 
   render: _.template(
     "<div class='individualMessages'>" +
-    "<span class='username'>" + "<%= username %>" + "</span>" +
-    "<span class='text'>" + "<%= text %>" + "</span>" +
-    "<span class='timeCreated'>" + "<%= createdAt %>" + "</span>" +
+    "<div class='username'>" + "<%= username %>" + "</div>" +
+    "<div class='text'>" + "<%= text %>" + "</div>" +
+    "<div class='timeCreated'>" + "<%= createdAt %>" + "</div>" +
     "</div>"
   )
 };
